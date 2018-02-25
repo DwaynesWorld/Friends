@@ -1,0 +1,20 @@
+﻿<Window x:Class="FriendOrganizer.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FriendOrganizer.UI"
+        xmlns:views="clr-namespace:FriendOrganizer.UI.Views"
+        mc:Ignorable="d"
+        Title="Friend Organizer" Height="350" Width="525" FontSize="20">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <views:NavigationView Grid.Column="0" DataContext="{Binding Path=NavigationViewModel}" />
+        <views:FriendDetailView Grid.Column="1" DataContext="{Binding Path=FriendDetailViewModel}" />
+    </Grid>
+</Window>
