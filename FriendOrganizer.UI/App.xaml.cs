@@ -9,6 +9,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace FriendOrganizer.UI
 {
@@ -24,6 +25,12 @@ namespace FriendOrganizer.UI
 
             var mainWindow = container.Resolve<MainWindow>();
             mainWindow.Show();
+        }
+
+        private void Application_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
+        {
+            MessageBox.Show($"Unexpected error occurred:{Environment.NewLine}{e.Exception.Message}", "Unexpected Error");
+            e.Handled = true;
         }
     }
 }

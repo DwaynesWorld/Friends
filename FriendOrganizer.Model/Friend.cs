@@ -19,6 +19,7 @@ namespace FriendOrganizer.Model
         public string LastName { get; set; }
 
         [StringLength(50)]
+        [EmailAddress]
         public string Email { get; set; }
 
     }

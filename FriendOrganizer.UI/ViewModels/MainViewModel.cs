@@ -19,10 +19,6 @@ namespace FriendOrganizer.UI.ViewModels
             FriendDetailViewModel = friendDetailViewModel;
         }
 
-        public async Task LoadAsync()
-        {
-            await NavigationViewModel.LoadAsync();
-        }
+        public async Task LoadAsync() => await NavigationViewModel.LoadAsync();
     }
-
 }
